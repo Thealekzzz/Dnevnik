@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: raleway;
+    min-width: 500px;
+}
+
+header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 800;
+    color: #333;
+}
+
+.invisible {
+    display: none;
+    /* opacity: 0; */
+    /* transform: translateY(-50px); */
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    /* background-color: wheat; */
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.addTask {
+    margin-left: 20px;
+    height: 40px;
+    width: 40px;
+    background-color: seagreen;
+    color: white;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all .2s ease-out;
+}
+
+.rotated {
+    transform: rotateZ(45deg);
+}
+
+.delete {
+    width: 20px;
+    height: 20px;
+    background-color: tomato;
+    color: white;
+    font-size: 40px;
+    border-radius: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tasks {
+    margin-top: 50px;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.task {
+    width: 400px;
+    min-height: 150px;
+    /* height: fit-content; */
+    background-color: white;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .08);
+    border-radius: 20px;
+    padding: 20px;
+    font-family: montserrat;
+    /* border-bottom: royalblue 1px solid; */
+}
+
+.task .deadline {
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 6px;
+    padding: 4px 8px;
+    width: fit-content;
+    color: white;
+}
+
+.regular {
+    background-color: cadetblue;
+}
+
+.asap {
+    background-color: tomato;
+}
+
+.past {
+    background-color: black;
+}
+
+.task .subject {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.task .descr {
+    width: 100%;
+}
+
+header .container {
+    position: relative;
+}
+
+.formTask {
+    position: absolute;
+    width: 420px;
+    height: 260px;
+    background-color: #fff;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .08);
+    border-radius: 20px;
+    padding: 16px 20px;
+    transition: all .2s;
+    /* display: flex;
+    flex-direction: column; */
+
+    top: 60px;
+    left: 0;
+}
+
+.formTask select {
+    padding: 8px 4px;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .04);
+    margin-bottom: 20px;
+}
+
+.formTask textarea {
+    resize: none;
+    padding: 6px;
+    outline: none;
+    font-family: montserrat;
+    margin-bottom: 16px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.date input {
+    padding: 6px;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .04);
+}
+
+.date div {
+    font-size: 13px;
+    background-color: seagreen;
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.submit {
+    background-color: seagreen;
+    color: white;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+    /* justify-self: right; */
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .task {
+        width: 100%;
+    }
+}
