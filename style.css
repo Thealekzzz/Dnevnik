@@ -98,14 +98,17 @@ h1 {
 
 .regular {
     background-color: cadetblue;
+    box-shadow: 0 0 20px rgba(96, 157, 159, .6);
 }
 
 .asap {
-    background-color: tomato;
+    background-color: crimson;
+    box-shadow: 0 0 20px rgba(220, 20, 60, .4);
 }
 
 .past {
     background-color: black;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .3);
 }
 
 .task .subject {

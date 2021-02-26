@@ -61,13 +61,13 @@ function addTaskToBoard(obj) {
     dl.classList.add('deadline')
     if (+obj.deadlineNum - +new Date() < 0) {
         dl.classList.add('past')
-    
+
     } else if (+obj.deadlineNum - +new Date() < 172800000) {
         dl.classList.add('asap')
 
     } else {
         dl.classList.add('regular')
-
+        
     }
     dl.textContent = `${obj.deadline}, ${days[new Date(+obj.deadlineNum).getDay()]}`
     top.appendChild(dl)
@@ -83,9 +83,7 @@ function addTaskToBoard(obj) {
                 tasks.splice(tasks.indexOf(item), 1)
                 localStorage.removeItem(item.id)
             }
-        })
-        
-        
+        }) 
     })
     top.appendChild(del)
 
@@ -127,7 +125,7 @@ nextTwoWeekButton.addEventListener('click', () => {
 })
 
 submit.addEventListener('click', () => {
-    if (deadlineInput.valueAsDate != null && taskInput.value !== ""){
+    if (deadlineInput.valueAsDate != null && taskInput.value !== "") {
         let tempId = (new Date().getTime()).toString()
         let tempObj = new Hometask(subjectInput.value, taskInput.value, optimizeDate(deadlineInput.valueAsDate), deadlineInput.valueAsDate.getTime().toString(), tempId)
         addTaskToBoard(tempObj)
@@ -135,14 +133,12 @@ submit.addEventListener('click', () => {
         localStorage.setItem(tempId, JSON.stringify(tempObj))
 
         formTask.classList.toggle('invisible')
+        addTaskButton.classList.remove('rotated')
         taskInput.value = ''
         deadlineInput.value = ''
-
-
 
     }
 })
 
 
 updateTasks()
-
