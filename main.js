@@ -96,11 +96,11 @@ function addTaskToBoard(obj) {
 
     let edit = createElem('div', ['editButton'])
     edit.addEventListener('click', () => {
-        console.log('wruighj');
         if (edit.classList.contains('confirmButton')) {
             task.removeChild(document.querySelector('.editTaskField'))
+            task.style.position = ''
         } else {
-            console.log(task.style.width);
+            // console.log(task.style.width);
             task.style.position = 'relative'
     
             let editTaskField = createElem('div', ['editTaskField'], {'data-id':obj.id})
@@ -110,20 +110,20 @@ function addTaskToBoard(obj) {
     
             let editDateInput = createElem('input')
             editDateInput.type = 'date'
-            editDateInput.value = obj.deadlineNum
+            editDateInput.valueAsDate = new Date(+obj.deadlineNum)
             editDate.appendChild(editDateInput)
     
             let editNextWeek = createElem('div', ['editNextWeek'])
             editNextWeek.textContent = 'Через неделю'
             editNextWeek.addEventListener('click', () => {
-                editDateInput.valueAsDate = new Date(+new Date() + +new Date(1970, 0, 8, 3))
+                editDateInput.valueAsDate = new Date(+obj.deadlineNum + +new Date(1970, 0, 8, 3))
             })
             editDate.appendChild(editNextWeek)
     
             let editNextTwoWeek = createElem('div', ['editNextTwoWeek'])
             editNextTwoWeek.textContent = 'Через 2 недели'
             editNextTwoWeek.addEventListener('click', () => {
-                editDateInput.valueAsDate = new Date(+new Date() + +new Date(1970, 0, 15, 3))
+                editDateInput.valueAsDate = new Date(+obj.deadlineNum + +new Date(1970, 0, 15, 3))
             })
             editDate.appendChild(editNextTwoWeek)
     
@@ -220,6 +220,8 @@ function reSetItem(id, obj) {
 addTaskButton.addEventListener('click', () => {
     formTask.classList.toggle('invisible')
     addTaskButton.classList.toggle('rotated')
+
+    deadlineInput.valueAsDate = new Date()
 })
 
 nextWeekButton.addEventListener('click', () => {
