@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: raleway;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.subjectsList {
+    width: 400px;
+    height: 240px;
+    color: #333;
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .12);
+    border-radius: 20px;
+
+    padding: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.addElemToList {
+    background-color: seagreen;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    outline: none;
+    border: none;
+    font-size: 26px;
+    line-height: 80%;
+    cursor: pointer;
+}

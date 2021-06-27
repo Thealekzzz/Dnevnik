@@ -19,6 +19,7 @@ class Hometask {
 let tasks = []
 let taskField = document.querySelector('.tasks')
 let addTaskButton = document.querySelector('.addTask')
+let editListButton = document.querySelector(".editList")
 
 let formTask = document.querySelector('.formTask')
 let nextWeekButton = document.querySelector('.nextWeek')
@@ -55,6 +56,7 @@ function updateTasks() {
     tasks.forEach(item => addTaskToBoard(item))
 }
 
+
 function createElem(type = 'div', classes = [], attributes = {}) {
 
     // Создаёт объект и добавляет классы и атрибуты
@@ -71,6 +73,7 @@ function createElem(type = 'div', classes = [], attributes = {}) {
 
     return tempElem
 }
+
 
 function addTaskToBoard(obj) {
     let task = createElem('div', ['task'], {'data-id':obj.id})
@@ -204,24 +207,34 @@ function addTaskToBoard(obj) {
     taskField.appendChild(task)
 }
 
+
 function optimizeDate(date) {
     return `${makeDouble(date.getDate())}.${makeDouble(date.getMonth() + 1)}.${makeDouble(date.getFullYear())}`
 }
+
 
 function makeDouble(num) {
     if (num < 10) return `0${num}`
     else return num
 }
 
+
 function reSetItem(id, obj) {
     localStorage.setItem(id, obj)
 }
+
 
 addTaskButton.addEventListener('click', () => {
     formTask.classList.toggle('invisible')
     addTaskButton.classList.toggle('rotated')
 
     deadlineInput.valueAsDate = new Date()
+})
+
+editListButton.addEventListener('click', target => {
+    console.log(target.target)
+
+    
 })
 
 nextWeekButton.addEventListener('click', () => {

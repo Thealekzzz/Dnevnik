@@ -45,6 +45,7 @@ select {
     width: 90%;
     margin: 0 auto;
     display: flex;
+    justify-content: left;
     /* background-color: wheat; */
 }
 
@@ -60,18 +61,30 @@ select {
     gap: 5px;
 }
 
-.addTask {
-    margin-left: 20px;
+.button {
     height: 40px;
     width: 40px;
-    background-color: seagreen;
-    color: white;
     border-radius: 50px;
     outline: none;
     border: none;
-    font-size: 32px;
     cursor: pointer;
+
+}
+
+.addTask {
+    margin-left: 20px;
+    background-color: seagreen;
+    color: white;
+    font-size: 32px;
     transition: all .2s ease-out;
+}
+
+.editList {
+    margin-left: 20px;
+    background-color: orange;
+    color: white;
+    font-size: 26px;
+    justify-self: right;
 }
 
 .rotated {
